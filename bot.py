@@ -17,7 +17,7 @@ from discord.ext import commands
 # Fin importaciones
 
 ############################ declaraciones de cabecera ###################################
-DEBUG = True
+DEBUG = False
 
 clockwerk      = commands.Bot(command_prefix='/cw ', case_insensitive=True) # Dándole prefijo a sus comandos
 
@@ -167,11 +167,9 @@ async def op(ctx, tiempo = None, hero = None ):
             await ctx.send('Y por último: ' + '**'+valores[8]+'**' +'Porcentaje de victoria: '+ valores[9] +'tasa de elección: ' + valores[10] +'y radio de KDA: ' + valores[11])
             await ctx.send('El peor evaluado es: ' + '**'+valores[460]+'**' +'Porcentaje de victoria: '+ valores[461] +'tasa de elección: ' + valores[462] +'y radio de KDA: ' + valores[463])
         else:
-            rank = valores.index(hero+'\n')
-            if rank == 0:
-                rank = 1 
-            else:
-                rank = 3*rank - rank
+            position = valores.index(hero+'\n') + 1
+            rank = (3 + position) / 4
+            rank = int(rank)
             await ctx.send(hero + ' está en el lugar ' + str(rank) + ' de los héroes de ' + tiempo_ )
             
     except Exception as e:
