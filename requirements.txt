@@ -1,0 +1,4 @@
+cleverbot_io
+requests
+git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice]
+beautifulsoup4==4.6.3
