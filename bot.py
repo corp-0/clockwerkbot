@@ -107,19 +107,15 @@ async def sayAloud(ctx, msg: str, cnl = None):
 @clockwerk.command() # Devuelve los 3 mejores y el peor héroe del tiempo solicitdo, según dotabuff
 async def op(ctx, tiempo = None, hero = None ):
     # La araña
-        
-    if tiempo == 'month' or tiempo == 'mes':
-        my_url = 'https://es.dotabuff.com/heroes/winning?date=month'
-    else: 
-        tiempo = 'week'
-
-    if tiempo == 'genesis':
-        my_url = 'https://es.dotabuff.com/heroes/winning?date=all'
-    else:
-        tiempo = 'week'
-    
-    if tiempo == None or tiempo == 'week' or tiempo == 'semana':
-        my_url = 'https://es.dotabuff.com/heroes/winning?date=week'
+    if tiempo == None:
+        tiempo = 'genesis'
+        my_url = 'https://es.dotabuff.com/heroes/winning?date=all' 
+    else:       
+        if tiempo == 'month' or tiempo == 'mes':
+            my_url = 'https://es.dotabuff.com/heroes/winning?date=month'
+        else:
+            if tiempo == 'week' or tiempo == 'semana':
+                my_url = 'https://es.dotabuff.com/heroes/winning?date=week'
 
     if tiempo == None or tiempo == 'week' or tiempo == 'semana':
         tiempo_ = 'esta semana '
