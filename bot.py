@@ -2,6 +2,7 @@
 import json
 import os
 import random
+import cleverbot_io
 import re
 import time
 import urllib.parse
@@ -104,7 +105,7 @@ async def sayAloud(ctx, msg: str, cnl = None):
         else:
             await canal.send(msg, tts=True)
 
-@clockwerk.command() # Devuelve los 3 mejores y el peor héroe del tiempo solicitdo, según dotabuff
+@clockwerk.command() # Devuelve los 3 mejores y el peor héroe del tiempo solicitado, según dotabuff
 async def op(ctx, tiempo = None, hero = None ):
     # La araña
     if tiempo == None:
@@ -167,6 +168,7 @@ async def op(ctx, tiempo = None, hero = None ):
             rank = (3 + position) / 4
             rank = int(rank)
             await ctx.send(hero + ' está en el lugar ' + str(rank) + ' de los héroes de ' + tiempo_ )
+            await ctx.send("con un porcentaje de victoria de: " + valores[position + 1] + "tasa de elección: " + valores[position+2] + "y radio de KDA: " + valores[position+3])
             
     except Exception as e:
         print(str(e))
@@ -183,5 +185,9 @@ if DEBUG:
     with open('c:\\Users/filax/Desktop/secret.txt') as token:
         debug_token = token.read()
     clockwerk.run(debug_token)
+    #with open('c:\\Users/filax/Desktop/cb_cw_user.txt') as cb:
+    #    cbSecret = cb.readlines()
+    #cb_bot = cleverbot_io.set(user=cbSecret[0], key=cbSecret[1], nick='SESSIONNICK(optional)')
+
 else:    
     clockwerk.run(os.environ['TOKEN'])
