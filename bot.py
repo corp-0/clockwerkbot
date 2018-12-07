@@ -22,7 +22,7 @@ DEBUG = False
 
 clockwerk      = commands.Bot(command_prefix='/cw ', case_insensitive=True) # Dándole prefijo a sus comandos
 
-game          = discord.Game('DOTA 2') # Qué juego juega el bot
+game          = discord.Game('Dota 2') # Qué juego juega el bot
 sepa          = "************************************"  # Un separador para la consola
 
 
