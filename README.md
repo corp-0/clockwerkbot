@@ -1,6 +1,6 @@
 # clockwerkbot
 
-![Clockwerk](https://d1u5p3l4wpay3k.cloudfront.net/dota2_gamepedia/d/d8/Clockwerk_icon.png?version=c3a83e037e572a3e05feae076a3f3272) 
+![Clockwerk](https://c-7npsfqifvt0x24hbnfqfejbx2edvstfdeox2edpn.g00.gamepedia.com/g00/3_c-7epub3.hbnfqfejb.dpn_/c-7NPSFQIFVT0x24iuuqtx3ax2fx2fhbnfqfejb.dvstfdeo.dpnx2fepub3_hbnfqfejbx2fex2fe9x2fDmpdlx78fsl_jdpo.qohx3fwfstjpox3d180edc1f8e61b2bcb7d944864eb71cdg_$/$/$/$/$?i10c.ua=1&i10c.dv=13) 
 >Some assembly required!
 
 **ENG:** 
@@ -12,7 +12,7 @@
  Right now ClockwerkBot can:
       
       - Give you the best 3 heroes of different times (week, month and all the eternity)
-        based on KDA, picking rate and winning rate (rawling data from [DotaBuff.com](https://es.dotabuff.com/))
+        based on KDA, picking rate and winning rate (crawling data from [DotaBuff.com](https://es.dotabuff.com/))
       - Give you the worst hero of the selected time.
       - Say whatever you tell him to say in whatever channel to make him talk.
       - Kill himself.
