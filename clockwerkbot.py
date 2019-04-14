@@ -20,7 +20,7 @@ from bs4 import BeautifulSoup as soup
 from discord.ext import commands
 
 # global variables
-DEBUG = True
+DEBUG = False
 clockwerk     = commands.Bot(command_prefix='/cw ', case_insensitive=True) # Dándole prefijo a sus comandos
 game          = discord.Game('Dota 2') # Qué juego juega el bot
 sepa          = "************************************"  # Un separador para la consola
