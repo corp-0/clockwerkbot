@@ -84,23 +84,23 @@ async def op(ctx, tiempo = None, hero = None ):
         2 -- hero <STRING> - Optional, the specific hero you want to know about."""
 
     if tiempo == None:
-        await ctx.send('El tiempo es un argumento requerido')
-        await ctx.send('Posibles valores: genesis, mes, semana')
+        await ctx.send('Time is a required argument!')
+        await ctx.send('Possible values: genesis, month, week')
         return False
     elif tiempo == 'genesis':
         my_url = 'https://es.dotabuff.com/heroes/winning?date=all'
-        tiempo_str = 'Todos los tiempos' 
+        tiempo_str = 'all times' 
       
     elif tiempo == 'month' or tiempo == 'mes':
         my_url = 'https://es.dotabuff.com/heroes/winning?date=month'
-        tiempo_str = 'este mes'
+        tiempo_str = 'this month'
 
     elif tiempo == 'week' or tiempo == 'semana':
         my_url = 'https://es.dotabuff.com/heroes/winning?date=week'
-        tiempo_str = 'esta semana'
+        tiempo_str = 'this week'
     else:
-        await ctx.send('No entendí el tiempo que me pides.')
-        await ctx.send('Posibles valores: genesis, mes, semana')
+        await ctx.send("I can't understand what you mean.")
+        await ctx.send("Possible values: genesis, month, week")
         return False
 
     #Llamando la arañita
@@ -146,15 +146,15 @@ async def op(ctx, tiempo = None, hero = None ):
                     this_hero_data = dd.get(this_hero_rank)
 
             if hero != None:
-                await ctx.send('**'+hero+'**' + ' está en el lugar ' + str(this_hero_rank) + ' de los héroes de ' + tiempo_str )
-                await ctx.send("con un porcentaje de victoria de: " + this_hero_data[1] + ', tasa de elección:  '+ this_hero_data[2] + ', y radio de KDA:  '+ this_hero_data[3])
+                await ctx.send('**'+hero+'**' + ' is in place ' + str(this_hero_rank) + ' of the heroes of ' + tiempo_str )
+                await ctx.send("Victory percentage: " + this_hero_data[1] + ', pick rate:  '+ this_hero_data[2] + ', and KDA rate:  '+ this_hero_data[3])
                 return False
 
         if hero == None:
-            await ctx.send('Los héroes más op de ' + tiempo_str +  ' son: ' + '**'+ first_hero[0] +'**' + ', Porcentaje de victoria: '+ first_hero[1] + ', tasa de elección: ' + first_hero[2] + ', y radio de KDA: ' + first_hero[3]) 
-            await ctx.send('Le sigue: ' + '**'+ second_hero[0] +'**' +', Porcentaje de victoria: '+ second_hero[1] +', tasa de elección: ' + second_hero[2] +', y radio de KDA: ' + second_hero[3])
-            await ctx.send('Y por último: ' + '**'+ third_hero[0] +'**' +', Porcentaje de victoria: '+ third_hero[1] +', tasa de elección: ' + third_hero[2] +', y radio de KDA: ' + third_hero[3])
-            await ctx.send('El peor evaluado es: ' + '**'+ last_hero[0] +'**' +', Porcentaje de victoria: '+ last_hero[1] +', tasa de elección: ' + last_hero[2] +', y radio de KDA: ' + last_hero[3])
+            await ctx.send('The better heroes of ' + tiempo_str +  ' are: ' + '**'+ first_hero[0] +'**' + ', victory percentage: '+ first_hero[1] + ', pick rate: ' + first_hero[2] + ', and KDA rate: ' + first_hero[3]) 
+            await ctx.send('Follows: ' + '**'+ second_hero[0] +'**' +', victory percentage: '+ second_hero[1] +', pick rate: ' + second_hero[2] +', and KDA rate: ' + second_hero[3])
+            await ctx.send('And lastly: ' + '**'+ third_hero[0] +'**' +', victory percentage: '+ third_hero[1] +', pick rate: ' + third_hero[2] +', and KDA rate: ' + third_hero[3])
+            await ctx.send('The worst evaluated is: ' + '**'+ last_hero[0] +'**' +', victory percentage: '+ last_hero[1] +', pick rate: ' + last_hero[2] +', and KDA rate: ' + last_hero[3])
             return True
 
     except Exception as e:
@@ -217,7 +217,7 @@ async def sayAloud(ctx, msg: str, cnl = None):
     else:
         canal = discord.utils.get(clockwerk.get_all_channels(), name = cnl)
         if canal is None:
-            await ctx.send('Uhmmm... No encuentro el canal ' + cnl, tts=True)
+            await ctx.send("Uhmmm... I can't find that channel" + cnl, tts=True)
         else:
             await canal.send(msg, tts=True)
     
