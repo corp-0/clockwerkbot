@@ -3,6 +3,9 @@
 ![Clockwerk](https://c-7npsfqifvt0x24hbnfqfejbx2edvstfdeox2edpn.g00.gamepedia.com/g00/3_c-7epub3.hbnfqfejb.dpn_/c-7NPSFQIFVT0x24iuuqtx3ax2fx2fhbnfqfejb.dvstfdeo.dpnx2fepub3_hbnfqfejbx2fex2fe9x2fDmpdlx78fsl_jdpo.qohx3fwfstjpox3d180edc1f8e61b2bcb7d944864eb71cdg_$/$/$/$/$?i10c.ua=1&i10c.dv=13) 
 >Some assembly required!
 
+Invite me to your Discord server!
+[https://discordapp.com/oauth2/authorize?client_id=495453674664099850&scope=bot&permissions=0](Click here)
+
 **ENG:** 
       ClockwerkBot is a small personal project to learn coding. 
       ClockwerkBot is based in the [discord.py API](https://github.com/Rapptz/discord.py/tree/rewrite) and thus it is primarily
