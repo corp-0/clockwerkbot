@@ -162,6 +162,30 @@ async def op(ctx, tiempo = None, hero = None ):
         await ctx.send('Recibí un error intentando realizar tu solicitud: ' + str(e))
 
 @clockwerk.command()
+async def rndpick(ctx, att = None):
+    """Ask the bot for a random hero. In case the main attribute is specified, 
+    the random hero will only be from that attribute, otherwise it will be any hero.
+    Args:
+        0 -- ctx <OBJECT> - Channel from where the bot was called.
+        1 -- att <STRING> - Optional, if specified the hero can only be from this main attribute.
+    """
+    with open ('allheroes.json', 'r') as array:
+        all_heroes_names = json.load(array)
+        str_heroes       = all_heroes_names['str']
+        agi_heroes       = all_heroes_names['agi']
+        int_heroes       = all_heroes_names['int']
+        all_heroes_names = str_heroes + agi_heroes + int_heroes
+
+    if att == None:
+        await ctx.send('Maybe try picking: **'+ random.choice(all_heroes_names) +'**')
+    if att == 'str':
+        await ctx.send('Maybe try picking: **'+ random.choice(str_heroes) +'**')
+    if att == 'agi':
+        await ctx.send('Maybe try picking: **'+ random.choice(agi_heroes) +'**')
+    if att == 'int':
+        await ctx.send('Maybe try picking: **'+ random.choice(int_heroes) +'**')
+
+@clockwerk.command()
 async def say(ctx, msg: str, cnl = None):
     """Makes the bot say whatever you want in whatever channel you want.
     Args:
