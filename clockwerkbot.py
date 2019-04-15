@@ -51,7 +51,7 @@ def broodmama(my_url):
 @clockwerk.event
 async def on_ready():
     """This event ocurrs whenever the bot is online. 
-    As soon as he gets only, he will try to do a 'spawn' dialogue line in the
+    As soon as he gets online, he will try to do a 'spawn' dialogue line in the
     channel called 'dota2'. If there isn't one, then your server is not that cool."""
 
     print('El bot ha iniciado sesión')
@@ -178,12 +178,14 @@ async def rndpick(ctx, att = None):
 
     if att == None:
         await ctx.send('Maybe try picking: **'+ random.choice(all_heroes_names) +'**')
-    if att == 'str':
+    elif att == 'str':
         await ctx.send('Maybe try picking: **'+ random.choice(str_heroes) +'**')
-    if att == 'agi':
+    elif att == 'agi':
         await ctx.send('Maybe try picking: **'+ random.choice(agi_heroes) +'**')
-    if att == 'int':
+    elif att == 'int':
         await ctx.send('Maybe try picking: **'+ random.choice(int_heroes) +'**')
+    else:
+        await ctx.send("I can't understand that argument. Posibble values are: str, agi, int")
 
 @clockwerk.command()
 async def say(ctx, msg: str, cnl = None):
