@@ -68,11 +68,11 @@ async def on_ready():
         print('mi ping es ' + str(clockwerk.latency))
         await clockwerk.change_presence(status=discord.Status.online, activity=game, afk=False)
         print(sepa)
-        try:
-            canal = discord.utils.get(clockwerk.get_all_channels(), name = "dota2")
-            await canal.send(random.choice(data['spawning']))
-        except: 
-            pass
+        #try:
+        #    canal = discord.utils.get(clockwerk.get_all_channels(), name = "dota2")
+        #    await canal.send(random.choice(data['spawning']))
+        #except: 
+        #    pass
 
 # Commands
 @clockwerk.command()
